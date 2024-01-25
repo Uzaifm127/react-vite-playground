@@ -106,3 +106,16 @@ doubleCardsArray = doubleCardsArray.map((element, index) => {
 		...element
 	}
 })
+
+export const shuffleArray = (array) => {
+  const shuffledArray = [...array];
+
+  for (let i = 0; i < shuffledArray.length; i++) {
+    const j = Math.floor(Math.random() * shuffledArray.length);
+    const tempItem = shuffledArray[i];
+    shuffledArray[i] = shuffledArray[j];
+    shuffledArray[j] = tempItem;
+  }
+
+  return shuffledArray;
+};
